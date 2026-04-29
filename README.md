@@ -20,10 +20,9 @@
 Built upon **Windows 11 Professional (25H2)**, WMAROS integrates custom scripts and deep system-level optimizations developed by the AROS team. This allows for total control over the codebase, enabling extreme performance gains and enhanced security layers.
 
 ### 🛡️ Licensing & Protection
-This project and its assets are protected under the **ARGLFU - ALRI GROUP LICENSE FREE USE**.
+This project and its assets are protected under the **[ARGLR - ALRI GROUP LICENSE FREE USE](https://raw.githubusercontent.com/alrigroup/licenses/refs/heads/main/LICENSE-ARGLFU)**.
 - **Free Use:** Granted for end-users.
 - **Modifications:** Unauthorized tampering or redistribution of modified code is strictly prohibited.
-
 ---
 
 ### 👤 Credits & Lead
@@ -43,5 +42,6 @@ This project and its assets are protected under the **ARGLFU - ALRI GROUP LICENS
 <br>
 
 <div align="center">
+  <p>Copyright © 2020-2026 <b>ALRI Development</b>. All rights reserved.</p>
   <i>"ALRI Development: Turning code into elite solutions."</i>
 </div>
