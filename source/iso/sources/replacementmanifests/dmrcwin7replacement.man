@@ -1,0 +1,53 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-DeviceMetadataRetrievalClient"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      replacementSettingsVersionRange="0"
+      settingsVersion="1"
+      >
+    <!-- The section needs to exactly match the one from DeviceMetadataRetrievalClient.man -->
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataCache\* [*.devicemetadata-ms]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataStore\* [*.devicemetadata-ms]</pattern>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\Device Metadata [PreventDeviceMetadataFromNetwork]</pattern>
+          </objectSet>
+        </include>
+        <exclude>
+          <objectSet>
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataCache\dmrccache\downloads\* [*.devicemetadata-ms]</pattern>
+            <!-- Exclude metadata packages that are known to be bad -->
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataStore\* [d3a162c7-a388-4099-b63d-265639514cc0.devicemetadata-ms]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataCache\dmrccache\* [d3a162c7-a388-4099-b63d-265639514cc0.devicemetadata-ms]</pattern>
+          </objectSet>
+        </exclude>
+        <!-- Move device metadata cabs in DeviceMetadataCache to the downloads
+        directory so that they will be processed after upgrade  -->
+        <locationModify script="MigXmlHelper.ExactMove(&apos;%ProgramData%\Microsoft\Windows\DeviceMetadataCache\dmrccache\downloads&apos;)">
+          <objectSet>
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataCache\* [*.devicemetadata-ms]</pattern>
+          </objectSet>
+        </locationModify>
+        <merge script="MigXmlHelper.SourcePriority()">
+          <objectSet>
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataCache\dmrccache\downloads\* [*.devicemetadata-ms]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Windows\DeviceMetadataStore\* [*.devicemetadata-ms]</pattern>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\Device Metadata [PreventDeviceMetadataFromNetwork]</pattern>
+          </objectSet>
+        </merge>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

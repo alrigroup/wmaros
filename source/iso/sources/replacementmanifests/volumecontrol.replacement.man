@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-Audio-VolumeControl"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <!-- This replacement file is needed for the transition from an older OS to a newer one. The only way that the LocationModify for
+       work is having this replacement file to make these changes during an OS update. -->
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="0"
+      scope="Upgrade,MigWiz,USMT"
+      settingsVersion="1"
+      >
+    <rules context="System">
+      <!-- This rule is applicable for Upgrade and Other functionality and do NOT execute when backup wizard (SDO) is run -->
+      <conditions operation="OR">
+        <condition negation="Yes">MigXmlHelper.IsMigrationScope("pdrbr.accessibility.default")</condition>
+      </conditions>
+      <include>
+        <objectSet>
+          <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\Audio[EnableLogonHIDControls]</pattern>
+        </objectSet>
+      </include>
+    </rules>
+    <rules context="User">
+      <!-- This rule is applicable for Upgrade and Other functionality and do NOT execute when backup wizard (SDO) is run -->
+      <conditions operation="OR">
+        <condition negation="Yes">MigXmlHelper.IsMigrationScope("pdrbr.accessibility.default")</condition>
+      </conditions>
+      <include>
+        <objectSet>
+          <pattern type="Registry">HKCU\Software\Microsoft\Multimedia\Audio\SndVol\* [*]</pattern>
+          <pattern type="Registry">HKCU\Software\Microsoft\Multimedia\Audio[UserDuckingPreference]</pattern>
+          <pattern type="Registry">HKCU\Software\Microsoft\Multimedia\Audio[ScreenReaderDuckingPreference]</pattern>
+          <pattern type="Registry">HKCU\Software\Microsoft\Multimedia\Audio[AccessibilityMonoMixState]</pattern>
+          <pattern type="Registry">HKCU\Software\Microsoft\Multimedia\Audio[MicrophonePrivacyToastFired]</pattern>
+          <pattern type="Registry">HKCU\Software\Microsoft\Internet Explorer\LowRegistry\Audio\* [*]</pattern>
+        </objectSet>
+      </include>
+      <locationModify script="MigXmlHelper.RelativeMove(&apos; HKCU\Software\Microsoft\Internet Explorer\LowRegistry\Audio&apos;,&apos; HKCU\Software\Microsoft\Multimedia\Audio&apos;)">
+        <objectSet>
+          <pattern type="Registry">HKCU\Software\Microsoft\Internet Explorer\LowRegistry\Audio\* [*]</pattern>
+        </objectSet>
+      </locationModify>
+      <merge script="MigXmlHelper.SourcePriority()">
+        <objectSet>
+          <pattern type="Registry">HKCU\Software\Microsoft\Internet Explorer\LowRegistry\Audio\* [*]</pattern>
+        </objectSet>
+      </merge>
+    </rules>
+    <rules context="User">
+      <!-- This rule is applicable and execute when backup wizard (SDO) is run -->
+      <conditions operation="OR">
+        <condition>MigXmlHelper.IsMigrationScope("pdrbr.accessibility.default")</condition>
+      </conditions>
+      <include>
+        <objectSet>
+          <pattern type="Registry">HKCU\Software\Microsoft\Multimedia\Audio[AccessibilityMonoMixState]</pattern>
+        </objectSet>
+      </include>
+    </rules>
+    <rules context="UserAndSystem">
+      <!-- This rule is applicable and execute when backup wizard (SDO) is run -->
+      <conditions operation="OR">
+        <condition>MigXmlHelper.IsMigrationScope("pdrbr.accessibility.default")</condition>
+      </conditions>
+      <excludeAttributes attributes="Security">
+        <objectSet>
+          <pattern type="File">* [*]</pattern>
+          <pattern type="Registry">* [*]</pattern>
+        </objectSet>
+      </excludeAttributes>
+    </rules>
+  </migration>
+</assembly>

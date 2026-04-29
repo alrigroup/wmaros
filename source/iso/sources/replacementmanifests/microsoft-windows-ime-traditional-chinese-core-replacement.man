@@ -1,0 +1,96 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-IME-Traditional-Chinese-Core"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      ignoreConfigurationSection="Yes"
+      replacementSettingsVersionRange="0"
+      scope="Upgrade,MigWiz,USMT"
+      settingsVersion="1"
+      >
+    <migXml xmlns="">
+      <rules context="user">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Trigram]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Phonetic_All_ActiveAlphaNum]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [BallonUI]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [CandidateLargeFont]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [PhrManSelfLearnSortType]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ActiveLearning]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [DefaultLanguage]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Legacy_AutoFinalize]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Quick_ZkeyAsWildCard]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Intelligent_AssociatedWord]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [SelfLearning]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Domain]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [NewPhonetic_IntCharMode]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [VirtualInputMode]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Fuzzy]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [AnsiChar]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Phonetic_IsOfflineReading]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [MaxCharPerSentence]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Phonetic_All_ZkeyAsWildCard]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ChangJie_AssociatedWord]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ShiftLeft]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ReconvertLength]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [LeadingIndicator]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ChangJie_All_ActiveAlphaNum]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Intelligent_EscapeFunc]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [FuzzyScheme]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [HFTLearning]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ShiftRight]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Intelligent_AutoFinalize]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [EnableExtensionA_Char]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [EudpSCK]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [PuncEnable]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Phonetic_IntCharMode]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [CandidateSortType]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [EnableExtensionB_Char]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [AutoCandState]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [CharMode]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [EnableCNSReading]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Big5CharOnly]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Phonetic_AssociatedWord]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Phonetic_ReadLayout]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Surrogate]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Quick_AssociatedWord]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Legacy_EscapeFunc]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [NewQuick_Modeless]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Intelligent_EnableFinal]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ChangJie_IsOfflineReading]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [BeepEnable]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Intelligent_AutoInputSwitch]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ChangJie_All_ZkeyAsWildCard]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ReversedReadingType]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [SharedEudp]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Delemiter]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [NewChangJie_Modeless]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [NewPhonetic_Modeless]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Legacy_Modeless]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Intellegnt_Eudp]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Legacy_AutoInputSwitch]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [PhrManEudpSortType]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [PluginLexiconInfo]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Legacy_Eudp]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [Legacy_EnableFinal]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [UserSymbolMapping]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ReservedWord]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [CustomLayout]</pattern>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\ime\IMTC70 [ChangJie_ReadLayout]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+    <migrationDisplayID>Date_Time_Language_and_Region\Regional_Language_Options</migrationDisplayID>
+  </migration>
+</assembly>

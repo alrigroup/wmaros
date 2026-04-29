@@ -1,0 +1,37 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      buildType="$(build.buildType)"
+      language="neutral"
+      name="Microsoft-Windows-WBioSrvc"
+      processorArchitecture="*"
+      publicKeyToken=""
+      version="0.0.0.0"
+      versionScope="nonSxS"
+      />
+  <migration
+      critical="Yes"
+      replacementSettingsVersionRange="0-2"
+      scope="Upgrade,Data"
+      settingsVersion="3"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\WinBio\* [*]</pattern>
+            <pattern type="Registry">HKLM\System\CurrentControlSet\Services\WbioSrvc\Parameters [EnrollmentCommitted]</pattern>
+            <pattern type="File">%windir%\System32\WinBioDatabase\*[*]</pattern>
+            <pattern type="File">%SYSTEMROOT%\System32\config\systemprofile\AppData\Local\Microsoft\Windows\WinBio\* [*]</pattern>
+            <pattern type="File">%windir%\ServiceState\WBioSrvc\*[*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

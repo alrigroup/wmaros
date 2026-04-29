@@ -1,0 +1,38 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-WindowsUpdateClient-Core"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      offlineApply="No"
+      optimizePatterns="No"
+      replacementSettingsVersionRange="1-3"
+      scope="Upgrade,Data"
+      settingsVersion="4"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="File">%WINDIR%\SoftwareDistribution\PostRebootEventCache.V2\* [*]</pattern>
+            <pattern type="File">%WINDIR%\SoftwareDistribution\EventCache.V2\* [*]</pattern>
+            <pattern type="File">%WINDIR%\SoftwareDistribution [ReportingEvents.log]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Reporting\EventCache.v2\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\OSUpgradeHistory\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate [SusClientId]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate [SusClientIdValidation]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\DeploymentCallbackInfo\* [*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

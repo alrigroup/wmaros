@@ -1,0 +1,32 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-WID-migration"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      versionScope="nonSxS"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="6.2-6.3"
+      settingsVersion="0"
+      >
+    <registerSDF name="Windows-Internal-Database"/>
+    <migXml xmlns="">
+      <!-- On a Vista / Win7 down-level system, we detect the presence of WID using the WID Setup Registry. -->
+      <detects>
+        <detect>
+          <condition>MigXmlHelper.IsOSEarlierThan("NT", "6.4")</condition>
+        </detect>
+        <detect>
+          <condition>MigXmlHelper.DoesObjectExist( "File", "%windir%\WID\Binn [sqlservr.exe]" )</condition>
+        </detect>
+      </detects>
+    </migXml>
+  </migration>
+</assembly>

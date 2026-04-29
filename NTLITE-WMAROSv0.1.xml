@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Preset isAutoSaved="false" xmlns="urn:schemas-nliteos-com:pn.v1">
+	<Date>04/29/2026 14:31:52</Date>
+	<Version>1.1</Version>
+	<AppInfo>
+		<Version>2026.4.10973</Version>
+		<Licensed>No</Licensed>
+		<Protections>Yes</Protections>
+		<Host>Windows 11 Professional 25H2 x64 - 10.0.26200.6584 (en-US)</Host>
+	</AppInfo>
+	<ImageInfo>
+		<Version mode="offline">Windows 11 Professional 25H2 x64 - 10.0.26200.6584 (en-US)</Version>
+		<GUID>{D823539C-FE10-4423-AF4D-80BF9C460CFC}</GUID>
+	</ImageInfo>
+	<RemoveComponents AppRemovalMode="DISM"></RemoveComponents>
+	<Compatibility>
+		<ComponentFeatures>
+			<Feature enabled="no">AppGuard</Feature>
+			<Feature enabled="yes">Battle.net</Feature>
+			<Feature enabled="no">YubiKey</Feature>
+			<Feature enabled="no">Bluetooth</Feature>
+			<Feature enabled="yes">USBCamera</Feature>
+			<Feature enabled="no">CapFrameX</Feature>
+			<Feature enabled="yes">Discord</Feature>
+			<Feature enabled="no">Docker</Feature>
+			<Feature enabled="yes">EAC</Feature>
+			<Feature enabled="yes">FileSharing</Feature>
+			<Feature enabled="no">Hyper-V</Feature>
+			<Feature enabled="no">iCloud</Feature>
+			<Feature enabled="no">Kaspersky</Feature>
+			<Feature enabled="yes">LegacyGames</Feature>
+			<Feature enabled="yes">OfficeSupport</Feature>
+			<Feature enabled="yes">AppxSupport</Feature>
+			<Feature enabled="yes">Netflix</Feature>
+			<Feature enabled="no">NetworkDiscovery</Feature>
+			<Feature enabled="yes">NightLight</Feature>
+			<Feature enabled="yes">NvidiaSetup</Feature>
+			<Feature enabled="no">OneNote</Feature>
+			<Feature enabled="yes">OOBE</Feature>
+			<Feature enabled="no">PITR</Feature>
+			<Feature enabled="yes">Printing</Feature>
+			<Feature enabled="yes">Recommended-All</Feature>
+			<Feature enabled="no">RDPServer</Feature>
+			<Feature enabled="no">SamsungSwitch</Feature>
+			<Feature enabled="yes">Scanning</Feature>
+			<Feature enabled="yes">ServicingStack</Feature>
+			<Feature enabled="yes">ShellSearchSupport</Feature>
+			<Feature enabled="no">SnippingTool</Feature>
+			<Feature enabled="yes">Spotify</Feature>
+			<Feature enabled="yes">SFC</Feature>
+			<Feature enabled="yes">DefaultFonts</Feature>
+			<Feature enabled="no">SafeMode</Feature>
+			<Feature enabled="yes">TeamViewer</Feature>
+			<Feature enabled="no">Recommended-Tablet</Feature>
+			<Feature enabled="yes">HostRefresh</Feature>
+			<Feature enabled="no">USBModem</Feature>
+			<Feature enabled="yes">USB</Feature>
+			<Feature enabled="yes">VideoPlayback</Feature>
+			<Feature enabled="no">VPN</Feature>
+			<Feature enabled="yes">VisualStudio</Feature>
+			<Feature enabled="no">VSS</Feature>
+			<Feature enabled="yes">Activation</Feature>
+			<Feature enabled="no">WFC</Feature>
+			<Feature enabled="yes">WinSetup</Feature>
+			<Feature enabled="yes">WindowsStore</Feature>
+			<Feature enabled="yes">WindowsUpdate</Feature>
+			<Feature enabled="yes">WLAN</Feature>
+		</ComponentFeatures>
+		<MachineDrivers>
+			<Machine enabled="yes">HostMachine</Machine>
+			<Machine enabled="no">Hyper-V VM</Machine>
+			<Machine enabled="no">Parallels VM</Machine>
+			<Machine enabled="no">Virtual Box VM</Machine>
+			<Machine enabled="no">VMware VM</Machine>
+		</MachineDrivers>
+	</Compatibility>
+	<Tweaks></Tweaks>
+	<ApplyOptions>
+		<ImageTasks>
+			<Task>imageSaveRebuild</Task>
+			<Task>imageFormatWim</Task>
+		</ImageTasks>
+		<Commands>
+			<PostApply>
+				
+			</PostApply>
+		</Commands>
+	</ApplyOptions>
+</Preset>

@@ -1,0 +1,105 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-Network-Security"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      replacementSettingsVersionRange="0-2"
+      settingsVersion="3"
+      >
+    <machineSpecific>
+      <migXml xmlns="">
+        <rules context="System">
+          <include>
+            <objectSet>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\* [*]</pattern>
+            </objectSet>
+          </include>
+          <exclude>
+            <objectSet>
+              <!-- WF provider -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Provider [{decc16ca-3f33-4346-be1e-8fb4ae0f3d62}]</pattern>
+              <!-- WSH and Quarantine provider -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Provider [{4b153735-1049-4480-aab4-d1b9bdc03710}]</pattern>
+              <!-- EDP provider -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Provider [{a90296f7-46b8-4457-8f84-b05e05d3c622}]</pattern>
+              <!-- WSH sublayer -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\SubLayer [{b3cdd441-af90-41ba-a745-7c6008ff2300}]</pattern>
+              <!-- WF sublayer -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\SubLayer [{b3cdd441-af90-41ba-a745-7c6008ff2301}]</pattern>
+              <!-- Quarantine sublayer -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\SubLayer [{b3cdd441-af90-41ba-a745-7c6008ff2302}]</pattern>
+              <!-- EDP sublayer -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\SubLayer [{09a47e38-fa97-471b-b123-18bcd7e65071}]</pattern>
+            </objectSet>
+            <objectSet>
+              <!-- Only apply the following if earlier than Fe release -->
+              <conditions>
+                <condition>MigXmlHelper.IsOSEarlierThan("NT","10.0.20197.0")</condition>
+              </conditions>
+              <!-- Quarantine Filters -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{b02a4013-b6b5-4859-9168-1e3299e43b24}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{d870c96c-75ee-46a6-8a02-8e4401a73423}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{0593d9b7-8e2b-44b1-9f9e-2831da1c9bd9}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{916c0dbf-7cec-40f9-9dd9-a5e68b904510}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{15d327cf-89c3-4032-9ded-774ae6b0b49f}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{082edf36-12d7-4698-858a-cf274b78d09a}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{8b50e2ec-7cf0-4b71-b42e-5b0536f6cab8}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{4137b143-2770-43d4-91a2-55bb0a069830}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{3180114b-8338-4740-9a16-444134ad62f4}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{17043d46-fac2-4561-bca1-0c7a05e95f5f}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{567d3836-3f5b-4067-b9c4-952f677010a2}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{4e718c57-c397-4221-9fbb-14fd51701d6a}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{3a90a266-1519-4d23-911b-e84cd0f02ab8}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{70694559-714a-4a38-a0cd-51439e06f1d8}]</pattern>
+              <!-- Boottime Filters -->
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{dc95b53e-01cf-4058-821d-350b3d0d4676}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{f444c576-6e60-4ea2-9faa-80d57ed12cd2}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{0c41d586-9c19-4e01-9d66-b5b98a97576e}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{12c38916-82ac-4737-8f38-b6957ffebad6}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{c970a45d-57f9-4e32-a5bd-886a9662641e}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{0c3be01b-fe70-4cc4-89dc-c07996b67e6d}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{4d9581d2-aef8-4993-84cd-b986ced80d42}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{be7cbdf4-b192-4aa5-94f8-1fb5c5ee07bc}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{716b48eb-0a35-4a76-92ab-1d987230d288}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{1165065e-4996-4338-abaf-4b8556b4d431}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{07a24961-a760-4e80-b263-6d275e1b09cb}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{5b0cb2e2-ab87-4974-9f1c-2f22a654eeb9}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{b6b2ca61-fb98-4422-adc2-e7cf56b3680c}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{0aa7fff8-919f-453c-928c-28a12122ba38}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{074f7f68-ee10-428a-89d1-ba78f6c327ca}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{c016105c-eb34-4519-a5fd-5f4e4ad4d18e}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{a47525e2-725b-4888-8af1-ba5a60c04f4d}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{0ccc96a3-8c5c-45e2-b80e-7e37b16cc1ad}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{91ffecf0-0a9e-4572-95f1-a7111af86967}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{64e55933-15a5-495d-a928-ccca43d44875}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{13bfd422-6f75-4408-8924-9400ec0cb19c}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{cbfb56db-3c85-4543-9bc2-76ea28cdd74e}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{2dd96961-5757-434f-b617-34e732517c0e}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{375fb39b-08c6-40f2-bdf2-08fa63f970a2}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{2db25e6c-f07a-44f4-b6c8-50a330d2790b}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{c42f1cd6-3a95-4ae2-a513-793c3ae610c7}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{b6fdab6b-dcc6-43e3-99ce-7aeca65063a4}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{3697a558-3ed3-49be-a4c1-c1a4448653b4}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{935b7f48-0ede-44dd-9bc2-e00bb635cda3}]</pattern>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\Persistent\Filter [{941dad9d-7b1a-4354-997b-00cf1aa9b35c}]</pattern>
+            </objectSet>
+          </exclude>
+          <merge script="MigXmlHelper.DestinationPriority()">
+            <objectSet>
+              <pattern type="Registry">HKLM\System\CurrentControlSet\Services\BFE\Parameters\Policy\* [*]</pattern>
+            </objectSet>
+          </merge>
+        </rules>
+      </migXml>
+    </machineSpecific>
+  </migration>
+</assembly>

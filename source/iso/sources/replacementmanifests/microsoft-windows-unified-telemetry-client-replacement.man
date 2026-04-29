@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-Unified-Telemetry-Client"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      replacementSettingsVersionRange="0"
+      settingsVersion="1"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <!-- Preserve all LocalSettings subkeys and values -->
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\LocalSettings\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\ETWEncryptionKey [ETWEncryptionCert]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\SettingsRequests\telemetry.ASM-WindowsDefault\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\SettingsRequests\telemetry.ASM-WindowsSQ\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\SettingsRequests\utc.app\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\EventTranscriptKey [EnableEventTranscript]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\OmittedIds\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\exporters\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack [AllowExporters]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\DownloadedSettings [telemetry.ASM-WindowsDefault.json]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\DownloadedSettings [telemetry.ASM-WindowsSQ.json]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\DownloadedSettings [utc.app.json]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\CustomTraceProfiles\* [*.wprp]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\ExporterStorage\* [*]</pattern>
+          </objectSet>
+        </include>
+        <merge script="MigXmlHelper.SourcePriority()">
+          <objectSet>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\DownloadedSettings [telemetry.ASM-WindowsDefault.json]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\DownloadedSettings [telemetry.ASM-WindowsSQ.json]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\DownloadedSettings [utc.app.json]</pattern>
+            <pattern type="File">%ProgramData%\Microsoft\Diagnosis\ExporterStorage\* [*]</pattern>
+          </objectSet>
+        </merge>
+      </rules>
+      <rules context="User">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack [ShowedToastAtLevel]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

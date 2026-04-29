@@ -1,0 +1,31 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-SystemSettings-SettingsHandlers-Cortana"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <!-- Used for migrating Search privacy settings from Vb/20H2/21H1 to SVOR -->
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      settingsVersion="1"
+      >
+    <migXml xmlns="">
+      <!-- Per-user state -->
+      <rules context="User">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings [*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

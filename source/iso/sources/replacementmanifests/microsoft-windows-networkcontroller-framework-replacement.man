@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly>
+  <assemblyIdentity
+      name="Microsoft-Windows-NetworkController-Framework"
+      version="0.0.0.0"
+      processorArchitecture="*"
+      language="*"
+      />
+  <migration
+      replacementSettingsVersionRange="0"
+      settingsVersion="1"
+      alwaysProcess="yes"
+      >
+    <migXml xmlns="">
+      <detects>
+        <detect>
+          <condition>MigXmlHelper.DoesObjectExist("File","%windir%\NetworkController[TemplateApplicationManifest.xml]")</condition>
+        </detect>
+      </detects>
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="GAC">[Microsoft.NetworkController.UpdateUtilities,*]</pattern>
+            <pattern type="GAC">[Microsoft.NetworkController.UpdateUtilities.Resources,*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

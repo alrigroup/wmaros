@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+    language="neutral"
+    name="Microsoft-Windows-StorageService"
+    processorArchitecture="*"
+    version="0.0.0.0"
+    />
+  <migration settingsVersion="3"
+    replacementSettingsVersionRange="2">
+    <!-- Migrate all HKCU/HKLM StorageSense and Storage health registry values except for AooM enablement (use manifest value) -->
+    <migXml xmlns="">
+      <rules context="User">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\* [*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+      <rules context="System">
+        <!--Ensure absence of the registry is migrated-->
+        <destinationCleanup>
+          <objectSet>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters [StorageSenseVersion]</pattern>
+          </objectSet>
+        </destinationCleanup>
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\* [*]</pattern>
+          </objectSet>
+        </include>
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows Security Health\Health Advisor\Storage Health Metrics\* [*]</pattern>
+          </objectSet>
+        </include>
+        <include>
+          <objectSet>
+            <pattern type="File">%ProgramData%\Microsoft\Storage Health [StorageEventsArchive.dat]</pattern>
+          </objectSet>
+        </include>
+        <exclude>
+          <objectSet>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense [EnableAooM]</pattern>
+          </objectSet>
+        </exclude>
+        <exclude>
+          <objectSet>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\StorageHealth [EndPoint]</pattern>
+          </objectSet>
+        </exclude>
+      </rules>
+      <plugin
+        classId="{3A2AF63D-8789-4C04-905C-CA558942166F}"
+        file="Microsoft-Windows-DiskMonitor\DiskMonMigPlugin.dll"
+        offlineApply="No"
+        offlineGather="No"
+        />
+    </migXml>
+  </migration>
+</assembly>

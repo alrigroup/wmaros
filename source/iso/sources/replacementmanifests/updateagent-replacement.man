@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly>
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-OneCore-UnifiedUpdatePlatform-UpdateAgent"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      versionScope="nonSxS"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="10.0.*"
+      settingsVersion="0"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="File">%windir%\Logs\MoSetup [*]</pattern>
+            <pattern type="File">%windir%\Logs\CBS [CBS.log]</pattern>
+          </objectSet>
+        </include>
+        <locationModify script="MigXmlHelper.RelativeMove(&apos;%windir%\Logs&apos;,&apos;%windir%\Logs\Downlevel&apos;)">
+          <objectSet>
+            <pattern type="File">%windir%\Logs\MoSetup [*]</pattern>
+            <pattern type="File">%windir%\Logs\CBS [CBS.log]</pattern>
+          </objectSet>
+        </locationModify>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

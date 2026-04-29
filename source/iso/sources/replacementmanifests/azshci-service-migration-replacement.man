@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-AzureStack-HCI-Plugin"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="10.0.17763-10.*"
+      scope="Upgrade"
+      settingsVersion="0"
+      >
+    <migXml xmlns="">
+      <plugin
+          classId="{B17742DB-956A-48FC-B9B2-E25E41496ECD}"
+          file="Microsoft-AzureStack-HCI-Plugin\AzsHciMigPlugin.dll"
+          offlineApply="Yes"
+          />
+    </migXml>
+  </migration>
+</assembly>

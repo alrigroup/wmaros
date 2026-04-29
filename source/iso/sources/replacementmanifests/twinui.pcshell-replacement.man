@@ -1,0 +1,41 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-Twinui-PCShell"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0-2"
+      settingsVersion="3"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKLM\Software\Microsoft\Input [IsInputAppPreloadEnabled]</pattern>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Scaling [MonitorSize]</pattern>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\EditionOverrides [UserSetting_DisableStartupSound]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+      <rules context="user">
+        <include>
+          <objectSet>
+            <!-- Win32 Startup app toast notification -->
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\RunNotification\* [*]</pattern>
+            <!-- Remote Desktop Enalement Data -->
+            <pattern type="Registry">HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RemoteSystemProviders\* [*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

@@ -1,0 +1,58 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="*"
+      name="HyperV-Compute-Host-Service"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <!--
+    To ensure that matching rules are used during the "gather" and "apply"
+    phases of an in-place upgrade, the following attributes should be updated
+    whenever a change is made to the migration rules in the...
+
+      onecore\vm\compute\service\host\man\exe\HyperV-Compute-Host-Service.man
+
+    ...manifest:
+
+      /assembly/migration/@settingsVersion
+
+        This attribute should be incremented by one. Any new value must be
+        mirrored in manifest located here:
+
+        onecore\vm\compute\service\host\man\exe\HyperV-Compute-Host-Service.man
+
+      /assembly/migration/@replacementSettingsVersionRange
+
+        This attribute should be set to "0-(@settingsVersion-1)". For
+        example, if @settingsVersion is incremented to "4",
+        @replacementSettingsVersionRange should be "0-3".
+
+    Additionally, the contents of the...
+
+      /assembly/migration/migXml
+
+    ...section should be mirrored between the two manifests.
+  -->
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      scope="Upgrade"
+      settingsVersion="1"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\HostComputeService\PersistentStore\* [*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

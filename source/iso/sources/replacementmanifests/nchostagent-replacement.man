@@ -1,0 +1,52 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-NetworkController-HostAgent"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      scope="Upgrade"
+      settingsVersion="0"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="File">%windir%\System32 [SlbHpConfig.xml]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\SlbHostAgent [Start]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent [Start]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [Connections]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [PeerCertificateCName]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [HostAgentCertificateCName]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [HostId]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DNSProxyService\* [*]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\DnsProxy\Parameters [Forwarders]</pattern>
+          </objectSet>
+        </include>
+        <!-- Prefer the values on the source host -->
+        <merge script="MigXmlHelper.SourcePriority()">
+          <objectSet>
+            <pattern type="File">%windir%\System32 [SlbHpConfig.xml]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\SlbHostAgent [Start]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent [Start]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [Connections]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [PeerCertificateCName]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [HostAgentCertificateCName]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters [HostId]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DNSProxyService\* [*]</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Services\DnsProxy\Parameters [Forwarders]</pattern>
+          </objectSet>
+        </merge>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+
+<!-- Down Level Manifest to trigger post-apply step for Component WCF-NonHTTP-Activation --><assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    authors="dglick"
+    buildFilter=""
+    company="Microsoft"
+    copyright=""
+    creationTimeStamp="2006-07-27T12:29:38.8364502Z"
+    description="Windows Communication Foundation Non-HTTP Activation Downlevel"
+    displayName="Windows Communication Foundation Non-HTTP Activation Downlevel"
+    lastUpdateTimeStamp="2006-07-27T12:29:38.8364502Z"
+    manifestVersion="1.0"
+    owners=""
+    supportInformation=""
+    testers=""
+    >
+  <assemblyIdentity
+      buildFilter=""
+      buildType="$(build.buildType)"
+      language="*"
+      name="WCF-NonHTTP-Activation-DL"
+      processorArchitecture="*"
+      publicKeyToken="$(Build.WindowsPublicKeyToken)"
+      type=""
+      version="0.0.0.0"
+      versionScope="nonSxS"
+      />
+  <migration>
+    <migXml xmlns="">
+      <!-- This is always true if we are upgrading from downlevel, because it's possible that Non-HTTP Activation is 
+                 enabled during upgrade, and thus we need to run the post-apply step. -->
+      <detects>
+        <detect>
+          <condition>MigXmlHelper.IsOSEarlierThan("NT", "6.0.0.0")</condition>
+        </detect>
+      </detects>
+    </migXml>
+  </migration>
+</assembly>

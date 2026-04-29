@@ -1,0 +1,31 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly>
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-PowerShellWebAccess-Commands-PowerShell"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="6.2.*"
+      scope="Upgrade"
+      settingsVersion="0"
+      >
+    <migXml xmlns="">
+      <detects>
+        <detect>
+          <condition>MigXmlHelper.DoesOSMatch("NT", "6.2.*")</condition>
+        </detect>
+      </detects>
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="File">%windir%\Web\PowerShellWebAccess\data\* [*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

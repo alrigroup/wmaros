@@ -1,0 +1,41 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-MFPlat"
+      processorArchitecture="*"
+      publicKeyToken=""
+      version="0.0.0.0"
+      versionScope="nonSxS"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="6.2.*"
+      scope="Upgrade"
+      settingsVersion="1"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\9596FB26-9850-41fd-AC3E-F7C3C00AFD4B\10778347-1370-4ee0-8bbd-33bdacaade49\DefaultPowerSchemeValues\381b4222-f694-41f0-9685-ff5bb260df2e\ACSettingIndex ACSettingIndex</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\9596FB26-9850-41fd-AC3E-F7C3C00AFD4B\10778347-1370-4ee0-8bbd-33bdacaade49\DefaultPowerSchemeValues\381b4222-f694-41f0-9685-ff5bb260df2e\DCSettingIndex DCSettingIndex</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\9596FB26-9850-41fd-AC3E-F7C3C00AFD4B\10778347-1370-4ee0-8bbd-33bdacaade49\DefaultPowerSchemeValues\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\ACSettingIndex ACSettingIndex</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\9596FB26-9850-41fd-AC3E-F7C3C00AFD4B\10778347-1370-4ee0-8bbd-33bdacaade49\DefaultPowerSchemeValues\8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c\DCSettingIndex DCSettingIndex</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\9596FB26-9850-41fd-AC3E-F7C3C00AFD4B\10778347-1370-4ee0-8bbd-33bdacaade49\DefaultPowerSchemeValues\a1841308-3541-4fab-bc81-f71556f20b4a\ACSettingIndex ACSettingIndex</pattern>
+            <pattern type="Registry">HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\9596FB26-9850-41fd-AC3E-F7C3C00AFD4B\10778347-1370-4ee0-8bbd-33bdacaade49\DefaultPowerSchemeValues\a1841308-3541-4fab-bc81-f71556f20b4a\DCSettingIndex DCSettingIndex</pattern>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows Media Foundation\HardwareMFT\* [*]</pattern>
+            <pattern type="Registry">HKLM\Software\Wow6432Node\Microsoft\Windows Media Foundation\HardwareMFT\* [*]</pattern>
+            <pattern type="Registry">HKLM\Software\Microsoft\Windows Media Foundation\Platform\UsbVideo [EnableSecureMode]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

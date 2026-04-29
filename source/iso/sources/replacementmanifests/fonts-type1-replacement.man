@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+
+<!-- replacement manifest for Type 1 Fonts on Vista, contains merely the gathering portion of migration --><assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    authors="ericflo"
+    company="MS"
+    copyright=""
+    creationTimeStamp="2003-11-11T22:56:35.2127782-08:00"
+    description="$(resourceString.description)"
+    displayName="$(resourceString.displayName)"
+    lastUpdateTimeStamp="2004-01-13T19:42:36.8260572+00:00"
+    manifestVersion="1.0"
+    owners="ericflo"
+    supportInformation=""
+    testers=""
+    >
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-Type1-Fonts"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      versionScope="nonSxS"
+      />
+  <migration
+      alwaysProcess="yes"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="6.0.*"
+      settingsVersion="0"
+      >
+    <migXml xmlns="">
+      <rules context="System">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Type 1 Installer\* [*]</pattern>
+          </objectSet>
+        </include>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

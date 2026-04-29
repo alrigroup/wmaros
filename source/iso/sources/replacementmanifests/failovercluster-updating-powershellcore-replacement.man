@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    manifestVersion="1.0"
+    >
+  <assemblyIdentity
+      buildType="$(build.buildType)"
+      language="neutral"
+      name="Microsoft-Windows-FailoverCluster-Updating-PowerShellCore"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      versionScope="nonSxS"
+      />
+  <!-- replacement version range has end *, because it's hard to predict when the manifest changes from Pull Request 4500817
+  will make it into the OS build-->
+  <migration
+      replacementSettingsVersionRange="0"
+      settingsVersion="1"
+      >
+    <!-- Self-declare this component for migrating from any Longhorn Server build -->
+    <!-- In-place migration.  Declarations here will not be migrated pc-to-pc -->
+    <machineSpecific>
+      <migXml xmlns="">
+        <rules context="System">
+          <include>
+            <objectSet>
+              <!-- Migrate CAU logs on in-place migrations (Longhorn build-to-build) -->
+              <pattern type="File">%system32%\winevt\Logs [Microsoft-Windows-ClusterAwareUpdating*]</pattern>
+              <pattern type="File">%system32%\LogFiles\ClusterUpdate [CauWmi*]</pattern>
+              <!-- Migrate CAU registry key values and subkeys values -->
+              <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\ClusterAwareUpdating\* [*]</pattern>
+            </objectSet>
+          </include>
+          <!-- SourcePriority to pull from runtime state of source -->
+          <merge script="MigXmlHelper.SourcePriority()">
+            <objectSet>
+              <pattern type="Registry">HKLM\Software\Microsoft\Windows\CurrentVersion\ClusterAwareUpdating\* [*]</pattern>
+              <pattern type="File">%system32%\winevt\Logs [Microsoft-Windows-ClusterAwareUpdating*]</pattern>
+              <pattern type="File">%system32%\LogFiles\ClusterUpdate [CauWmi*]</pattern>
+            </objectSet>
+          </merge>
+        </rules>
+        <rules context="User">
+          <include>
+            <objectSet>
+              <pattern type="File">%CSIDL_LOCAL_APPDATA%\Temp\CAU\* [*]</pattern>
+            </objectSet>
+          </include>
+          <!-- SourcePriority to pull from runtime state of source -->
+          <merge script="MigXmlHelper.SourcePriority()">
+            <objectSet>
+              <pattern type="File">%CSIDL_LOCAL_APPDATA%\Temp\CAU\* [*]</pattern>
+            </objectSet>
+          </merge>
+        </rules>
+      </migXml>
+    </machineSpecific>
+  </migration>
+</assembly>

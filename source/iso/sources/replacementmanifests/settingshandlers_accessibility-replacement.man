@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly>
+  <assemblyIdentity
+      name="Microsoft-Windows-SystemSettings-SettingsHandlers-Accessibility"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      replacementSettingsVersionRange="1"
+      settingsVersion="2"
+      >
+    <!--Gather phase rules-->
+    <migXml xmlns="">
+      <!--Rules that apply for each user account. This only applies to desktop as WCOS upgrades in place-->
+      <rules context="User">
+        <include>
+          <objectSet>
+            <pattern type="Registry">HKCU\Software\Microsoft\Accessibility\* [*]</pattern>
+          </objectSet>
+        </include>
+        <excludeAttributes attributes="Security">
+          <objectSet>
+            <pattern type="Registry">HKCU\software\microsoft\accessibility\* [*]</pattern>
+          </objectSet>
+        </excludeAttributes>
+      </rules>
+    </migXml>
+  </migration>
+</assembly>

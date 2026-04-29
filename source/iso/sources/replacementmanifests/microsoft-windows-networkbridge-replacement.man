@@ -1,0 +1,25 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<assembly>
+  <assemblyIdentity
+      language="neutral"
+      name="Microsoft-Windows-NetworkBridge"
+      processorArchitecture="*"
+      version="0.0.0.0"
+      />
+  <migration
+      alwaysProcess="6.0-6.2.8180"
+      replacementSettingsVersionRange="0"
+      replacementVersionRange="6.0-6.2.8180"
+      settingsVersion="0"
+      >
+    <machineSpecific>
+      <migXml xmlns="">
+        <plugin
+            classId="{ee036dc0-f9b7-4d2d-bb94-3dd3102c5804}"
+            file="NetworkBridge\BridgeMigPlugin.dll"
+            offlineApply="yes"
+            />
+      </migXml>
+    </machineSpecific>
+  </migration>
+</assembly>
