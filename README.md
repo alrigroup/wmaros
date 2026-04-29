@@ -42,6 +42,7 @@ This project and its assets are protected under the **[ARGLR - ALRI GROUP LICENS
 <br>
 
 <div align="center">
-  <p>Copyright © 2020-2026 <b>ALRI Development</b>. All rights reserved.</p>
   <i>"ALRI Development: Turning code into elite solutions."</i>
+  <br>
+  <p>Copyright © 2020-2026 <b>ALRI Development</b>. All rights reserved.</p>
 </div>
