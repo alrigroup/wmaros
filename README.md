@@ -5,7 +5,6 @@
   **Engineered by AROS**
 
   [![License: ARGLFU](https://img.shields.io/badge/License-ARGLFU-blue.svg)](https://raw.githubusercontent.com/alrigroup/licenses/refs/heads/main/LICENSE-ARGLFU)
-  [![Platform: Windows 11](https://img.shields.io/badge/Base-Windows%2011%20Pro%2025H2-0078d4?logo=windows)](https://microsoft.com/windows)
   [![Status: Optimized](https://img.shields.io/badge/Status-Ultra%20Performance-brightgreen)]()
 
   *ALRI OPERATING SYSTEM (AROS) — A division of ALRI Development.*
@@ -17,18 +16,21 @@
 **WMAROS** is a high-performance operating system designed and executed by **AROS**. The core focus of this project is to deliver an extremely optimized Windows environment, leveraging modern technologies to ensure a top-tier end-user experience.
 
 ### 🏗️ Development Foundation
-Built upon **Windows 11 Professional (25H2)**, WMAROS integrates custom scripts and deep system-level optimizations developed by the AROS team. This allows for total control over the codebase, enabling extreme performance gains and enhanced security layers.
+Built upon **Windows Professional**, WMAROS integrates custom scripts and deep system-level optimizations developed by the AROS team. This allows for total control over the codebase, enabling extreme performance gains and enhanced security layers.
 
 ### 🛡️ Licensing & Protection
 This project and its assets are protected under the **[ARGLR - ALRI GROUP LICENSE FREE USE](https://raw.githubusercontent.com/alrigroup/licenses/refs/heads/main/LICENSE-ARGLFU)**.
 - **Free Use:** Granted for end-users.
 - **Modifications:** Unauthorized tampering or redistribution of modified code is strictly prohibited.
 ---
+### 📄 Installation Guide
+**Version Lite** (Any Version Windows 10,11)
+**Version Ultra** WMAROS10U , WMAROS11U
+**Read the [INSTALLATION.md](INSTALLATION.md) file for installation instructions.**
 
 ### 👤 Credits & Lead
-- **Organization:** [ALRI Development](https://github.com/alrigroup/)
-- **Lead Developer:** [AlexAR](https://github.com/alexsanderalri)
-- **Parent Group:** ALRI Group
+- **Organization:** ALRI OPERATING SYSTEM (AROS)
+- **Parent Group:** ALRI DEVELOPMENT, ALRI GROUP
 
 ---
 

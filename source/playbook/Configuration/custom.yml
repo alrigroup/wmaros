@@ -30,8 +30,8 @@ actions:
       powercfg /x hibernate-timeout-dc 0;
 
   #Changing OEM information
-  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'Manufacturer', type: REG_SZ, data: 'FOOGGROUP'}
-  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'SupportURL', type: REG_SZ, data: 'https://dsc.gg/fooggroup'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'Manufacturer', type: REG_SZ, data: 'ALRI OPERATING SYSTEM'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'SupportURL', type: REG_SZ, data: 'https://dsc.gg/alrigroup'}
 
    #Changing Wallpaper
   - !powerShell: {command: '.\WALLPAPER.ps1 -Mode Desktop -ImagePath $env:systemroot\Web\Wallpaper\WMAROS\img0.jpg', exeDir: true, runas: currentUserElevated}
